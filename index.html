@@ -33,10 +33,10 @@
                         <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
                     </ul>
                     <span class="navbar-text">
-                        <a data-toggle="modal" data-target="#loginModal">
+                        <button type="button" id="loginButton" class="btn btn-link text-light">
                             <span class="fa fa-sign-in"></span>
                             Login
-                        </a>
+                        </button>
                     </span>
                 </div>            
         </div>
@@ -93,8 +93,7 @@
                     <img src="img/logo.png" class="img-fluid" >
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a class="btn btn-block nav-link btn-warning" data-toggle="modal" 
-                    data-target="#reserve" role="button">
+                    <a class="btn btn-block nav-link btn-warning"  role="button" id="reserveButton">
                              Reserve Table
                     </a>
                 </div>
@@ -203,7 +202,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="reserve" role="dialog">
+        <div class="modal fade reserve " id="reserve" role="dialog">
             <div class="modal-dialog modal-lg" role=" content">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -346,6 +345,18 @@
                     $("#carouselButton").children("span").removeClass('fa-play');
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
+            });
+
+            $('#loginButton').click(function(){
+                $('#loginModal').modal({
+                    show: true
+                });
+            });
+
+            $('#reserveButton').click(function(){
+                $('#reserve').modal({
+                    show: true
+                });
             });
         });
     </script>
